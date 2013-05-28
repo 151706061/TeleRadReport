@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{209DB750-7874-4C65-8CDE-D8DB8FDA2DD6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeleRadReport</RootNamespace>
+    <AssemblyName>TeleRadReport</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DicomObjects.NET.2.0">
+      <HintPath>E:\Desktop\TeleRad\TeleRadClient With AdvanceStudy\bin\DicomObjects.NET.2.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DicomServerDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DicomServerDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DicomServerDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DicomServerDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DicomServerDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DicomServerDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogIn.designer.cs">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportView.designer.cs">
+      <DependentUpon>frmReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSP.Designer.cs">
+      <DependentUpon>frmSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Information.Designer.cs">
+      <DependentUpon>Information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelFormType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent.designer.cs">
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modMain.cs" />
+    <Compile Include="Myconnectionclass.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetrieveDialogType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RetrieveDialogType.designer.cs">
+      <DependentUpon>RetrieveDialogType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="studymoversettings.cs" />
+    <EmbeddedResource Include="frmLogIn.resx">
+      <DependentUpon>frmLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportView.resx">
+      <DependentUpon>frmReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSP.resx">
+      <DependentUpon>frmSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Information.resx">
+      <DependentUpon>Information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabelFormType.resx">
+      <DependentUpon>LabelFormType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent.resx">
+      <DependentUpon>MDIParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RetrieveDialogType.resx">
+      <DependentUpon>RetrieveDialogType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DicomServerDBDataSet.xsc">
+      <DependentUpon>DicomServerDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DicomServerDBDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DicomServerDBDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DicomServerDBDataSet.xss">
+      <DependentUpon>DicomServerDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DicomServerDBDataSet1.xsc">
+      <DependentUpon>DicomServerDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DicomServerDBDataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DicomServerDBDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DicomServerDBDataSet1.xss">
+      <DependentUpon>DicomServerDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DicomServerDBDataSet2.xsc">
+      <DependentUpon>DicomServerDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DicomServerDBDataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DicomServerDBDataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DicomServerDBDataSet2.xss">
+      <DependentUpon>DicomServerDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="New Icon.ico" />
+    <Content Include="Resources\circle green.png" />
+    <Content Include="Resources\circle red.png" />
+    <None Include="Resources\crop.png" />
+    <Content Include="Resources\DownArrow.GIF" />
+    <Content Include="Resources\down_arrow.png" />
+    <None Include="Resources\gradient_linear_pyramid.png" />
+    <None Include="Resources\edit_pencil.png" />
+    <Content Include="Resources\GreenCircle.bmp" />
+    <Content Include="Resources\GreenCircle.gif" />
+    <Content Include="Resources\LogOff.jpg" />
+    <None Include="Resources\magnify_copy.png" />
+    <Content Include="Resources\New Icon.ico" />
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\protractor.png" />
+    <Content Include="Resources\RedCircle.gif" />
+    <Content Include="Resources\refresh.jpg" />
+    <None Include="Resources\rotate_clockwise.png" />
+    <None Include="Resources\rotate_counter_clockwise.png" />
+    <None Include="Resources\ruler.png" />
+    <Content Include="Resources\sendFiles.jpg" />
+    <None Include="Resources\shape_flip_vertical.png" />
+    <None Include="Resources\shape_flip_horizontal.png" />
+    <Content Include="Resources\UpArrow.GIF" />
+    <Content Include="Resources\up_arrow.png" />
+    <None Include="Resources\whitestyle_04_pointer.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

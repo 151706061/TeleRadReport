@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DicomServerDBDataSet1" targetNamespace="http://tempuri.org/DicomServerDBDataSet1.xsd" xmlns:mstns="http://tempuri.org/DicomServerDBDataSet1.xsd" xmlns="http://tempuri.org/DicomServerDBDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DicomServerDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DicomServerDBConnectionString (Settings)" PropertyReference="ApplicationSettings.TeleRadReport.Properties.Settings.GlobalReference.Default.DicomServerDBConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PatientStudyViewTableAdapter" GeneratorDataComponentClassName="PatientStudyViewTableAdapter" Name="PatientStudyView" UserDataComponentName="PatientStudyViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DicomServerDBConnectionString (Settings)" DbObjectName="DicomServerDB.dbo.PatientStudyView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        PatientID, Sex, DateOfBirth, StudyUID, StudyDate, StudyTime, ReferringPhysician_DICOM, PatientName_DICOM, Modality, IsNotes, IsReports, Centre
+FROM            dbo.PatientStudyView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="PatientID" DataSetColumn="PatientID" />
+              <Mapping SourceColumn="Sex" DataSetColumn="Sex" />
+              <Mapping SourceColumn="DateOfBirth" DataSetColumn="DateOfBirth" />
+              <Mapping SourceColumn="StudyUID" DataSetColumn="StudyUID" />
+              <Mapping SourceColumn="StudyDate" DataSetColumn="StudyDate" />
+              <Mapping SourceColumn="StudyTime" DataSetColumn="StudyTime" />
+              <Mapping SourceColumn="ReferringPhysician_DICOM" DataSetColumn="ReferringPhysician_DICOM" />
+              <Mapping SourceColumn="PatientName_DICOM" DataSetColumn="PatientName_DICOM" />
+              <Mapping SourceColumn="Modality" DataSetColumn="Modality" />
+              <Mapping SourceColumn="IsNotes" DataSetColumn="IsNotes" />
+              <Mapping SourceColumn="IsReports" DataSetColumn="IsReports" />
+              <Mapping SourceColumn="Centre" DataSetColumn="Centre" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DicomServerDBDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DicomServerDBDataSet1" msprop:Generator_UserDSName="DicomServerDBDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PatientStudyView" msprop:Generator_TableClassName="PatientStudyViewDataTable" msprop:Generator_TableVarName="tablePatientStudyView" msprop:Generator_TablePropName="PatientStudyView" msprop:Generator_RowDeletingName="PatientStudyViewRowDeleting" msprop:Generator_RowChangingName="PatientStudyViewRowChanging" msprop:Generator_RowEvHandlerName="PatientStudyViewRowChangeEventHandler" msprop:Generator_RowDeletedName="PatientStudyViewRowDeleted" msprop:Generator_UserTableName="PatientStudyView" msprop:Generator_RowChangedName="PatientStudyViewRowChanged" msprop:Generator_RowEvArgName="PatientStudyViewRowChangeEvent" msprop:Generator_RowClassName="PatientStudyViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PatientID" msprop:Generator_ColumnVarNameInTable="columnPatientID" msprop:Generator_ColumnPropNameInRow="PatientID" msprop:Generator_ColumnPropNameInTable="PatientIDColumn" msprop:Generator_UserColumnName="PatientID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sex" msprop:Generator_ColumnVarNameInTable="columnSex" msprop:Generator_ColumnPropNameInRow="Sex" msprop:Generator_ColumnPropNameInTable="SexColumn" msprop:Generator_UserColumnName="Sex" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOfBirth" msprop:Generator_ColumnVarNameInTable="columnDateOfBirth" msprop:Generator_ColumnPropNameInRow="DateOfBirth" msprop:Generator_ColumnPropNameInTable="DateOfBirthColumn" msprop:Generator_UserColumnName="DateOfBirth" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="StudyUID" msprop:Generator_ColumnVarNameInTable="columnStudyUID" msprop:Generator_ColumnPropNameInRow="StudyUID" msprop:Generator_ColumnPropNameInTable="StudyUIDColumn" msprop:Generator_UserColumnName="StudyUID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StudyDate" msprop:Generator_ColumnVarNameInTable="columnStudyDate" msprop:Generator_ColumnPropNameInRow="StudyDate" msprop:Generator_ColumnPropNameInTable="StudyDateColumn" msprop:Generator_UserColumnName="StudyDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="StudyTime" msprop:Generator_ColumnVarNameInTable="columnStudyTime" msprop:Generator_ColumnPropNameInRow="StudyTime" msprop:Generator_ColumnPropNameInTable="StudyTimeColumn" msprop:Generator_UserColumnName="StudyTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ReferringPhysician_DICOM" msprop:Generator_ColumnVarNameInTable="columnReferringPhysician_DICOM" msprop:Generator_ColumnPropNameInRow="ReferringPhysician_DICOM" msprop:Generator_ColumnPropNameInTable="ReferringPhysician_DICOMColumn" msprop:Generator_UserColumnName="ReferringPhysician_DICOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PatientName_DICOM" msprop:Generator_ColumnVarNameInTable="columnPatientName_DICOM" msprop:Generator_ColumnPropNameInRow="PatientName_DICOM" msprop:Generator_ColumnPropNameInTable="PatientName_DICOMColumn" msprop:Generator_UserColumnName="PatientName_DICOM">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modality" msprop:Generator_ColumnVarNameInTable="columnModality" msprop:Generator_ColumnPropNameInRow="Modality" msprop:Generator_ColumnPropNameInTable="ModalityColumn" msprop:Generator_UserColumnName="Modality">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsNotes" msprop:Generator_ColumnVarNameInTable="columnIsNotes" msprop:Generator_ColumnPropNameInRow="IsNotes" msprop:Generator_ColumnPropNameInTable="IsNotesColumn" msprop:Generator_UserColumnName="IsNotes" type="xs:boolean" minOccurs="0" />
+              <xs:element name="IsReports" msprop:Generator_ColumnVarNameInTable="columnIsReports" msprop:Generator_ColumnPropNameInRow="IsReports" msprop:Generator_ColumnPropNameInTable="IsReportsColumn" msprop:Generator_UserColumnName="IsReports" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Centre" msprop:Generator_ColumnVarNameInTable="columnCentre" msprop:Generator_ColumnPropNameInRow="Centre" msprop:Generator_ColumnPropNameInTable="CentreColumn" msprop:Generator_UserColumnName="Centre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PatientStudyView" />
+      <xs:field xpath="mstns:PatientID" />
+      <xs:field xpath="mstns:StudyUID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
