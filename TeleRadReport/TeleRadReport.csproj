@@ -11,7 +11,8 @@
     <RootNamespace>TeleRadReport</RootNamespace>
     <AssemblyName>TeleRadReport</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -34,14 +35,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DicomObjects.NET.2.0">
-      <HintPath>E:\Desktop\TeleRad\TeleRadClient With AdvanceStudy\bin\DicomObjects.NET.2.0.dll</HintPath>
+    <Reference Include="ClearCanvas.Common">
+      <HintPath>bin\ClearCanvas.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.Dicom">
+      <HintPath>bin\ClearCanvas.Dicom.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.ImageViewer.Common">
+      <HintPath>bin\ClearCanvas.ImageViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ClearCanvas.ImageViewer.DesktopServices">
+      <HintPath>bin\ClearCanvas.ImageViewer.DesktopServices.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp">
@@ -87,20 +99,11 @@
     <Compile Include="frmReportView.designer.cs">
       <DependentUpon>frmReportView.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSP.Designer.cs">
-      <DependentUpon>frmSP.cs</DependentUpon>
-    </Compile>
     <Compile Include="Information.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Information.Designer.cs">
       <DependentUpon>Information.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LabelFormType.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="MDIParent.cs">
       <SubType>Form</SubType>
@@ -134,14 +137,8 @@
     <EmbeddedResource Include="frmReportView.resx">
       <DependentUpon>frmReportView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSP.resx">
-      <DependentUpon>frmSP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LabelFormType.resx">
-      <DependentUpon>LabelFormType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent.resx">
       <DependentUpon>MDIParent.cs</DependentUpon>
@@ -162,6 +159,7 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.config" />
     <None Include="DicomServerDBDataSet.xsc">
       <DependentUpon>DicomServerDBDataSet.xsd</DependentUpon>
     </None>

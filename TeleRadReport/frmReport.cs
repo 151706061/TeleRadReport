@@ -20,8 +20,6 @@ namespace TeleRadReport
         OdbcCommand Cmd;
         OdbcDataReader Rs1;
 
-        frmSP SP = new frmSP();
-
         public frmReport()
         {
             InitializeComponent();
@@ -37,7 +35,7 @@ namespace TeleRadReport
 
         private void frmReport_FormClosing(object sender, System.Windows.Forms.FormClosingEventArgs e)
         {
-            SP.txtReports.Rtf = this.txtReports.Rtf;
+            //SP.txtReports.Rtf = this.txtReports.Rtf;
         }
 
         private void frmReport_Load(System.Object sender, System.EventArgs e)
@@ -266,8 +264,8 @@ namespace TeleRadReport
             //Insert_ReportDone_Image()
             MessageBox.Show("Successfully Report sent", "TeleRad - Client", MessageBoxButtons.OK);
 
-            SP.txtReports.Enabled = true;
-            SP.txtReports.Text = txtReports.Text;
+            //SP.txtReports.Enabled = true;
+            //SP.txtReports.Text = txtReports.Text;
         }
 
         public int Insert_ReportDone_Image()
@@ -390,8 +388,8 @@ namespace TeleRadReport
 
             //Insert_ReportDone_Image()
             MessageBox.Show("Successfully Saved Report", "TeleRad - Client", MessageBoxButtons.OK);
-            SP.txtReports.Enabled = true;
-            SP.txtReports.Text = txtReports.Text;
+            //SP.txtReports.Enabled = true;
+            //SP.txtReports.Text = txtReports.Text;
         }
     }
 }

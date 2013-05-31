@@ -11,6 +11,9 @@ using Microsoft.VisualBasic;
 using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
+using System.ServiceModel;
+using ClearCanvas.ImageViewer.Common.Automation;
+using System.Configuration;
 
 namespace TeleRadReport
 {
@@ -23,7 +26,6 @@ namespace TeleRadReport
         Color WoN_WoR;
         Color WN_WoR;
         Color WN_WR = new Color();
-        DicomObjects.DicomQuery q;
         private StudyMoverSettings _MoverSettings;
 
         public RetrieveDialogType()
@@ -854,7 +856,17 @@ namespace TeleRadReport
 
         private void btnRetreive_Click(object sender, EventArgs e)
         {
-            frmSP sp = new frmSP();
+
+            if (DataGridView1.SelectedRows == null)
+            {
+                MessageBox.Show(
+                                "Please Select a Study to Retrive It.",
+                                "Information- " + Application.ProductName,
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information
+                               );
+                return;
+            }
 
             if (DataGridView1.SelectedCells[1].Value != null)
                 modMain.PatName = DataGridView1.SelectedCells[1].Value.ToString();
@@ -869,24 +881,29 @@ namespace TeleRadReport
             if (DataGridView1.SelectedCells[7].Value != null)
                 modMain.StudyTime = DataGridView1.SelectedCells[7].Value.ToString();
 
-            _MoverSettings = LoadSettingfromXmlFile();
-            q = new DicomObjects.DicomQuery();
-            q.Node = _MoverSettings.IP;
-            q.Port = 104;
-            q.CalledAE = _MoverSettings.LOCALAET;
-            q.CallingAE = _MoverSettings.AET;
-            q.Level = DicomObjects.Enums.QueryLevel.STUDY;
-            q.Root = DicomObjects.Enums.QueryRoot.Study;
+            //_MoverSettings = LoadSettingfromXmlFile();
 
-            DicomObjects.DicomDataSetCollection s = new DicomObjects.DicomDataSetCollection();
-
-            q.PatientID = modMain.PatName;
-            q.StudyUID = modMain.StudyID;
-            s = q.Get();
-            for (i = 0; i <= s.Count - 1; i++)
-                sp.Viewer.Images.Add(s[i]);
-            sp.ShowDialog();
-            this.Close();
+            BasicHttpBinding binding = new BasicHttpBinding();
+            EndpointAddress endpoint = new EndpointAddress(ConfigurationManager.AppSettings["AutomationServiceUrl"]);
+            ViewerAutomationServiceClient client = new ViewerAutomationServiceClient(binding, endpoint);
+            try
+            {
+                client.Open();
+                OpenStudiesRequest request = new OpenStudiesRequest();
+                request.ActivateIfAlreadyOpen = true;
+                List<OpenStudyInfo> studiesToOpen = new List<OpenStudyInfo>();
+                OpenStudyInfo studyInfo = new OpenStudyInfo(modMain.StudyID); 
+                studiesToOpen.Add(studyInfo);
+                request.StudiesToOpen = studiesToOpen;
+                client.OpenStudies(request);
+                client.Close();
+            }
+            catch (Exception x)
+            {
+                client.Abort();
+                MessageBox.Show(x.Message);
+            }
+            //this.Close();
         }
 
     }
