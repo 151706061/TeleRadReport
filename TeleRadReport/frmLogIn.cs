@@ -124,7 +124,7 @@ namespace TeleRadReport
 
         private void frmLogIn_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            System.Environment.Exit(0);
         }
 
         private void Command2_Click(object sender, EventArgs e)

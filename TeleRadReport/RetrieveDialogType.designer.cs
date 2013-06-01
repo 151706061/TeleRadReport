@@ -480,13 +480,13 @@ namespace TeleRadReport
             this.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.DataGridView1.GridColor = System.Drawing.SystemColors.ControlText;
-            this.DataGridView1.Location = new System.Drawing.Point(124, 6);
+            this.DataGridView1.Location = new System.Drawing.Point(6, 6);
             this.DataGridView1.MultiSelect = false;
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.ReadOnly = true;
             this.DataGridView1.RowHeadersVisible = false;
             this.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView1.Size = new System.Drawing.Size(1036, 414);
+            this.DataGridView1.Size = new System.Drawing.Size(109, 414);
             this.DataGridView1.TabIndex = 1;
             this.DataGridView1.VirtualMode = true;
             this.DataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DataGridView1_CellFormatting);
@@ -665,14 +665,14 @@ namespace TeleRadReport
             this.tableLayoutPanel10.Controls.Add(this.btnViewNotes, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.Tree, 0, 3);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(124, 6);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 4;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(109, 414);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(1036, 414);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
             // btnRetreive
@@ -680,7 +680,7 @@ namespace TeleRadReport
             this.btnRetreive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRetreive.Location = new System.Drawing.Point(3, 3);
             this.btnRetreive.Name = "btnRetreive";
-            this.btnRetreive.Size = new System.Drawing.Size(103, 35);
+            this.btnRetreive.Size = new System.Drawing.Size(1030, 35);
             this.btnRetreive.TabIndex = 2;
             this.btnRetreive.Text = "Retreive && View";
             this.btnRetreive.UseVisualStyleBackColor = true;
@@ -691,7 +691,7 @@ namespace TeleRadReport
             this.btnViewReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnViewReport.Location = new System.Drawing.Point(3, 85);
             this.btnViewReport.Name = "btnViewReport";
-            this.btnViewReport.Size = new System.Drawing.Size(103, 35);
+            this.btnViewReport.Size = new System.Drawing.Size(1030, 35);
             this.btnViewReport.TabIndex = 4;
             this.btnViewReport.Text = "View Report";
             this.btnViewReport.UseVisualStyleBackColor = true;
@@ -702,7 +702,7 @@ namespace TeleRadReport
             this.btnViewNotes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnViewNotes.Location = new System.Drawing.Point(3, 44);
             this.btnViewNotes.Name = "btnViewNotes";
-            this.btnViewNotes.Size = new System.Drawing.Size(103, 35);
+            this.btnViewNotes.Size = new System.Drawing.Size(1030, 35);
             this.btnViewNotes.TabIndex = 5;
             this.btnViewNotes.Text = "View Notes";
             this.btnViewNotes.UseVisualStyleBackColor = true;
@@ -713,7 +713,7 @@ namespace TeleRadReport
             this.Tree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Tree.Location = new System.Drawing.Point(3, 126);
             this.Tree.Name = "Tree";
-            this.Tree.Size = new System.Drawing.Size(103, 285);
+            this.Tree.Size = new System.Drawing.Size(1030, 285);
             this.Tree.TabIndex = 6;
             // 
             // chkDX
