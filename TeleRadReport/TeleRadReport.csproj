@@ -36,16 +36,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ClearCanvas.Common">
-      <HintPath>bin\ClearCanvas.Common.dll</HintPath>
+      <HintPath>E:\Desktop\T3C\ClearCanvas\ImageViewer\DesktopServices\bin\Debug\ClearCanvas.Common.dll</HintPath>
     </Reference>
     <Reference Include="ClearCanvas.Dicom">
-      <HintPath>bin\ClearCanvas.Dicom.dll</HintPath>
+      <HintPath>E:\Desktop\T3C\ClearCanvas\ImageViewer\DesktopServices\bin\Debug\ClearCanvas.Dicom.dll</HintPath>
     </Reference>
     <Reference Include="ClearCanvas.ImageViewer.Common">
-      <HintPath>bin\ClearCanvas.ImageViewer.Common.dll</HintPath>
+      <HintPath>E:\Desktop\T3C\ClearCanvas\ImageViewer\DesktopServices\bin\Debug\ClearCanvas.ImageViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="ClearCanvas.ImageViewer.DesktopServices">
-      <HintPath>bin\ClearCanvas.ImageViewer.DesktopServices.dll</HintPath>
+      <HintPath>E:\Desktop\T3C\ClearCanvas\ImageViewer\DesktopServices\bin\Debug\ClearCanvas.ImageViewer.DesktopServices.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Private>True</Private>

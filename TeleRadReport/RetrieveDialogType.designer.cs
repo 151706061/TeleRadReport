@@ -64,22 +64,8 @@ namespace TeleRadReport
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.DataGridView1 = new System.Windows.Forms.DataGridView();
             this.SrNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PatientNameDICOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ModalityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SeriesNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImgNotes = new System.Windows.Forms.DataGridViewImageColumn();
             this.ImgReports = new System.Windows.Forms.DataGridViewImageColumn();
-            this.IsNotes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.IsReports = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.PatientStudyViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PatientStudyView = new TeleRadReport.DicomServerDBDataSet1();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.btnRetreive = new System.Windows.Forms.Button();
             this.btnViewReport = new System.Windows.Forms.Button();
@@ -129,17 +115,29 @@ namespace TeleRadReport
             this.Label19 = new System.Windows.Forms.Label();
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.ColorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.PatientStudyViewTableAdapter = new TeleRadReport.DicomServerDBDataSet1TableAdapters.PatientStudyViewTableAdapter();
             this.DataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.DataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PatientNameDICOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModalityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SeriesNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsNotes = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.IsReports = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.PatientStudyViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PatientStudyView = new TeleRadReport.DicomServerDBDataSet1();
+            this.PatientStudyViewTableAdapter = new TeleRadReport.DicomServerDBDataSet1TableAdapters.PatientStudyViewTableAdapter();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PatientStudyViewBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PatientStudyView)).BeginInit();
             this.tableLayoutPanel10.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
@@ -151,6 +149,8 @@ namespace TeleRadReport
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientStudyViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientStudyView)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel5
@@ -480,13 +480,13 @@ namespace TeleRadReport
             this.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.DataGridView1.GridColor = System.Drawing.SystemColors.ControlText;
-            this.DataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.DataGridView1.Location = new System.Drawing.Point(124, 6);
             this.DataGridView1.MultiSelect = false;
             this.DataGridView1.Name = "DataGridView1";
             this.DataGridView1.ReadOnly = true;
             this.DataGridView1.RowHeadersVisible = false;
             this.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridView1.Size = new System.Drawing.Size(109, 414);
+            this.DataGridView1.Size = new System.Drawing.Size(1036, 414);
             this.DataGridView1.TabIndex = 1;
             this.DataGridView1.VirtualMode = true;
             this.DataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DataGridView1_CellFormatting);
@@ -501,108 +501,6 @@ namespace TeleRadReport
             this.SrNo.Name = "SrNo";
             this.SrNo.ReadOnly = true;
             this.SrNo.Width = 64;
-            // 
-            // DataGridViewTextBoxColumn1
-            // 
-            this.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DataGridViewTextBoxColumn1.DataPropertyName = "PatientID";
-            this.DataGridViewTextBoxColumn1.HeaderText = "Patient ID";
-            this.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1";
-            this.DataGridViewTextBoxColumn1.ReadOnly = true;
-            this.DataGridViewTextBoxColumn1.Width = 89;
-            // 
-            // PatientNameDICOMDataGridViewTextBoxColumn
-            // 
-            this.PatientNameDICOMDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.PatientNameDICOMDataGridViewTextBoxColumn.DataPropertyName = "PatientName_DICOM";
-            this.PatientNameDICOMDataGridViewTextBoxColumn.HeaderText = "Patient Name";
-            this.PatientNameDICOMDataGridViewTextBoxColumn.Name = "PatientNameDICOMDataGridViewTextBoxColumn";
-            this.PatientNameDICOMDataGridViewTextBoxColumn.ReadOnly = true;
-            this.PatientNameDICOMDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // DataGridViewTextBoxColumn2
-            // 
-            this.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DataGridViewTextBoxColumn2.DataPropertyName = "Sex";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.DataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DataGridViewTextBoxColumn2.HeaderText = "Sex";
-            this.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2";
-            this.DataGridViewTextBoxColumn2.ReadOnly = true;
-            this.DataGridViewTextBoxColumn2.Width = 53;
-            // 
-            // DataGridViewTextBoxColumn3
-            // 
-            this.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DataGridViewTextBoxColumn3.DataPropertyName = "DateOfBirth";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            this.DataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DataGridViewTextBoxColumn3.HeaderText = "DOB";
-            this.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3";
-            this.DataGridViewTextBoxColumn3.ReadOnly = true;
-            this.DataGridViewTextBoxColumn3.Width = 58;
-            // 
-            // DataGridViewTextBoxColumn4
-            // 
-            this.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DataGridViewTextBoxColumn4.DataPropertyName = "StudyUID";
-            this.DataGridViewTextBoxColumn4.HeaderText = "Study UID";
-            this.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4";
-            this.DataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // DataGridViewTextBoxColumn5
-            // 
-            this.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DataGridViewTextBoxColumn5.DataPropertyName = "StudyDate";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
-            this.DataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DataGridViewTextBoxColumn5.HeaderText = "Study Date";
-            this.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5";
-            this.DataGridViewTextBoxColumn5.ReadOnly = true;
-            this.DataGridViewTextBoxColumn5.Width = 95;
-            // 
-            // DataGridViewTextBoxColumn6
-            // 
-            this.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DataGridViewTextBoxColumn6.DataPropertyName = "StudyTime";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "hh:mm tt";
-            this.DataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DataGridViewTextBoxColumn6.HeaderText = "Study Time";
-            this.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6";
-            this.DataGridViewTextBoxColumn6.ReadOnly = true;
-            this.DataGridViewTextBoxColumn6.Width = 95;
-            // 
-            // ModalityDataGridViewTextBoxColumn1
-            // 
-            this.ModalityDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ModalityDataGridViewTextBoxColumn1.DataPropertyName = "Modality";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ModalityDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ModalityDataGridViewTextBoxColumn1.HeaderText = "Modality";
-            this.ModalityDataGridViewTextBoxColumn1.Name = "ModalityDataGridViewTextBoxColumn1";
-            this.ModalityDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.ModalityDataGridViewTextBoxColumn1.Width = 79;
-            // 
-            // DataGridViewTextBoxColumn8
-            // 
-            this.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.DataGridViewTextBoxColumn8.DataPropertyName = "ReferringPhysician_DICOM";
-            this.DataGridViewTextBoxColumn8.HeaderText = "Ref. Physician";
-            this.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8";
-            this.DataGridViewTextBoxColumn8.ReadOnly = true;
-            this.DataGridViewTextBoxColumn8.Width = 114;
-            // 
-            // SeriesNumberDataGridViewTextBoxColumn1
-            // 
-            this.SeriesNumberDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SeriesNumberDataGridViewTextBoxColumn1.DataPropertyName = "Centre";
-            this.SeriesNumberDataGridViewTextBoxColumn1.HeaderText = "Centre";
-            this.SeriesNumberDataGridViewTextBoxColumn1.Name = "SeriesNumberDataGridViewTextBoxColumn1";
-            this.SeriesNumberDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.SeriesNumberDataGridViewTextBoxColumn1.Width = 69;
             // 
             // ImgNotes
             // 
@@ -626,36 +524,6 @@ namespace TeleRadReport
             this.ImgReports.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ImgReports.Width = 76;
             // 
-            // IsNotes
-            // 
-            this.IsNotes.DataPropertyName = "IsNotes";
-            this.IsNotes.HeaderText = "Notes";
-            this.IsNotes.Name = "IsNotes";
-            this.IsNotes.ReadOnly = true;
-            this.IsNotes.Visible = false;
-            // 
-            // IsReports
-            // 
-            this.IsReports.DataPropertyName = "IsReports";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.NullValue = false;
-            this.IsReports.DefaultCellStyle = dataGridViewCellStyle8;
-            this.IsReports.HeaderText = "Reports";
-            this.IsReports.Name = "IsReports";
-            this.IsReports.ReadOnly = true;
-            this.IsReports.Visible = false;
-            // 
-            // PatientStudyViewBindingSource
-            // 
-            this.PatientStudyViewBindingSource.DataMember = "PatientStudyView";
-            this.PatientStudyViewBindingSource.DataSource = this.PatientStudyView;
-            // 
-            // PatientStudyView
-            // 
-            this.PatientStudyView.DataSetName = "DicomServerDBDataSet1";
-            this.PatientStudyView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 1;
@@ -665,14 +533,14 @@ namespace TeleRadReport
             this.tableLayoutPanel10.Controls.Add(this.btnViewNotes, 0, 1);
             this.tableLayoutPanel10.Controls.Add(this.Tree, 0, 3);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(124, 6);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(6, 6);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 4;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(1036, 414);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(109, 414);
             this.tableLayoutPanel10.TabIndex = 0;
             // 
             // btnRetreive
@@ -680,7 +548,7 @@ namespace TeleRadReport
             this.btnRetreive.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnRetreive.Location = new System.Drawing.Point(3, 3);
             this.btnRetreive.Name = "btnRetreive";
-            this.btnRetreive.Size = new System.Drawing.Size(1030, 35);
+            this.btnRetreive.Size = new System.Drawing.Size(103, 35);
             this.btnRetreive.TabIndex = 2;
             this.btnRetreive.Text = "Retreive && View";
             this.btnRetreive.UseVisualStyleBackColor = true;
@@ -691,7 +559,7 @@ namespace TeleRadReport
             this.btnViewReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnViewReport.Location = new System.Drawing.Point(3, 85);
             this.btnViewReport.Name = "btnViewReport";
-            this.btnViewReport.Size = new System.Drawing.Size(1030, 35);
+            this.btnViewReport.Size = new System.Drawing.Size(103, 35);
             this.btnViewReport.TabIndex = 4;
             this.btnViewReport.Text = "View Report";
             this.btnViewReport.UseVisualStyleBackColor = true;
@@ -702,7 +570,7 @@ namespace TeleRadReport
             this.btnViewNotes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnViewNotes.Location = new System.Drawing.Point(3, 44);
             this.btnViewNotes.Name = "btnViewNotes";
-            this.btnViewNotes.Size = new System.Drawing.Size(1030, 35);
+            this.btnViewNotes.Size = new System.Drawing.Size(103, 35);
             this.btnViewNotes.TabIndex = 5;
             this.btnViewNotes.Text = "View Notes";
             this.btnViewNotes.UseVisualStyleBackColor = true;
@@ -713,7 +581,7 @@ namespace TeleRadReport
             this.Tree.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Tree.Location = new System.Drawing.Point(3, 126);
             this.Tree.Name = "Tree";
-            this.Tree.Size = new System.Drawing.Size(1030, 285);
+            this.Tree.Size = new System.Drawing.Size(103, 285);
             this.Tree.TabIndex = 6;
             // 
             // chkDX
@@ -1295,10 +1163,6 @@ namespace TeleRadReport
             this.PictureBox2.TabStop = false;
             this.PictureBox2.Click += new System.EventHandler(this.PictureBox2_Click);
             // 
-            // PatientStudyViewTableAdapter
-            // 
-            this.PatientStudyViewTableAdapter.ClearBeforeFill = true;
-            // 
             // DataGridViewImageColumn1
             // 
             this.DataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1316,6 +1180,142 @@ namespace TeleRadReport
             this.DataGridViewImageColumn2.Name = "DataGridViewImageColumn2";
             this.DataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.DataGridViewImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // DataGridViewTextBoxColumn1
+            // 
+            this.DataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DataGridViewTextBoxColumn1.DataPropertyName = "PatientID";
+            this.DataGridViewTextBoxColumn1.HeaderText = "Patient ID";
+            this.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1";
+            this.DataGridViewTextBoxColumn1.ReadOnly = true;
+            this.DataGridViewTextBoxColumn1.Width = 89;
+            // 
+            // PatientNameDICOMDataGridViewTextBoxColumn
+            // 
+            this.PatientNameDICOMDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.PatientNameDICOMDataGridViewTextBoxColumn.DataPropertyName = "PatientName_DICOM";
+            this.PatientNameDICOMDataGridViewTextBoxColumn.HeaderText = "Patient Name";
+            this.PatientNameDICOMDataGridViewTextBoxColumn.Name = "PatientNameDICOMDataGridViewTextBoxColumn";
+            this.PatientNameDICOMDataGridViewTextBoxColumn.ReadOnly = true;
+            this.PatientNameDICOMDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // DataGridViewTextBoxColumn2
+            // 
+            this.DataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DataGridViewTextBoxColumn2.DataPropertyName = "Sex";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.DataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DataGridViewTextBoxColumn2.HeaderText = "Sex";
+            this.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2";
+            this.DataGridViewTextBoxColumn2.ReadOnly = true;
+            this.DataGridViewTextBoxColumn2.Width = 53;
+            // 
+            // DataGridViewTextBoxColumn3
+            // 
+            this.DataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DataGridViewTextBoxColumn3.DataPropertyName = "DateOfBirth";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            this.DataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.DataGridViewTextBoxColumn3.HeaderText = "DOB";
+            this.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3";
+            this.DataGridViewTextBoxColumn3.ReadOnly = true;
+            this.DataGridViewTextBoxColumn3.Width = 58;
+            // 
+            // DataGridViewTextBoxColumn4
+            // 
+            this.DataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DataGridViewTextBoxColumn4.DataPropertyName = "StudyUID";
+            this.DataGridViewTextBoxColumn4.HeaderText = "Study UID";
+            this.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4";
+            this.DataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // DataGridViewTextBoxColumn5
+            // 
+            this.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DataGridViewTextBoxColumn5.DataPropertyName = "StudyDate";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Format = "dd/MM/yyyy";
+            this.DataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DataGridViewTextBoxColumn5.HeaderText = "Study Date";
+            this.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5";
+            this.DataGridViewTextBoxColumn5.ReadOnly = true;
+            this.DataGridViewTextBoxColumn5.Width = 95;
+            // 
+            // DataGridViewTextBoxColumn6
+            // 
+            this.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DataGridViewTextBoxColumn6.DataPropertyName = "StudyTime";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "hh:mm tt";
+            this.DataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle6;
+            this.DataGridViewTextBoxColumn6.HeaderText = "Study Time";
+            this.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6";
+            this.DataGridViewTextBoxColumn6.ReadOnly = true;
+            this.DataGridViewTextBoxColumn6.Width = 95;
+            // 
+            // ModalityDataGridViewTextBoxColumn1
+            // 
+            this.ModalityDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ModalityDataGridViewTextBoxColumn1.DataPropertyName = "Modality";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ModalityDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ModalityDataGridViewTextBoxColumn1.HeaderText = "Modality";
+            this.ModalityDataGridViewTextBoxColumn1.Name = "ModalityDataGridViewTextBoxColumn1";
+            this.ModalityDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.ModalityDataGridViewTextBoxColumn1.Width = 79;
+            // 
+            // DataGridViewTextBoxColumn8
+            // 
+            this.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.DataGridViewTextBoxColumn8.DataPropertyName = "ReferringPhysician_DICOM";
+            this.DataGridViewTextBoxColumn8.HeaderText = "Ref. Physician";
+            this.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8";
+            this.DataGridViewTextBoxColumn8.ReadOnly = true;
+            this.DataGridViewTextBoxColumn8.Width = 114;
+            // 
+            // SeriesNumberDataGridViewTextBoxColumn1
+            // 
+            this.SeriesNumberDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SeriesNumberDataGridViewTextBoxColumn1.DataPropertyName = "Centre";
+            this.SeriesNumberDataGridViewTextBoxColumn1.HeaderText = "Centre";
+            this.SeriesNumberDataGridViewTextBoxColumn1.Name = "SeriesNumberDataGridViewTextBoxColumn1";
+            this.SeriesNumberDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.SeriesNumberDataGridViewTextBoxColumn1.Width = 69;
+            // 
+            // IsNotes
+            // 
+            this.IsNotes.DataPropertyName = "IsNotes";
+            this.IsNotes.HeaderText = "Notes";
+            this.IsNotes.Name = "IsNotes";
+            this.IsNotes.ReadOnly = true;
+            this.IsNotes.Visible = false;
+            // 
+            // IsReports
+            // 
+            this.IsReports.DataPropertyName = "IsReports";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.NullValue = false;
+            this.IsReports.DefaultCellStyle = dataGridViewCellStyle8;
+            this.IsReports.HeaderText = "Reports";
+            this.IsReports.Name = "IsReports";
+            this.IsReports.ReadOnly = true;
+            this.IsReports.Visible = false;
+            // 
+            // PatientStudyViewBindingSource
+            // 
+            this.PatientStudyViewBindingSource.DataMember = "PatientStudyView";
+            this.PatientStudyViewBindingSource.DataSource = this.PatientStudyView;
+            // 
+            // PatientStudyView
+            // 
+            this.PatientStudyView.DataSetName = "DicomServerDBDataSet1";
+            this.PatientStudyView.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // PatientStudyViewTableAdapter
+            // 
+            this.PatientStudyViewTableAdapter.ClearBeforeFill = true;
             // 
             // RetrieveDialogType
             // 
@@ -1337,8 +1337,6 @@ namespace TeleRadReport
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PatientStudyViewBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PatientStudyView)).EndInit();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.tableLayoutPanel9.ResumeLayout(false);
@@ -1352,6 +1350,8 @@ namespace TeleRadReport
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientStudyViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PatientStudyView)).EndInit();
             this.ResumeLayout(false);
 
         }

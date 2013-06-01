@@ -70,21 +70,22 @@ namespace TeleRadReport
 
             for (i = 0; i <= DataGridView1.RowCount - 1; i++)
             {
-                if (Convert.ToBoolean(DataGridView1.Rows[i].Cells[13].Value) == false & Convert.ToBoolean(DataGridView1.Rows[i].Cells[14].Value) == false)
+                if (DataGridView1.Rows[i].Cells[13].Value == DBNull.Value || DataGridView1.Rows[i].Cells[14].Value == DBNull.Value) return 0; ;
+                if (Convert.ToBoolean(DataGridView1.Rows[i].Cells[13].Value) == false && Convert.ToBoolean(DataGridView1.Rows[i].Cells[14].Value) == false)
                 {
                     m_SelectedStyle = new DataGridViewCellStyle();
                     m_SelectedStyle.BackColor = WoN_WoR;
                     DataGridView1.Rows[i].DefaultCellStyle = m_SelectedStyle;
                     lb2 = lb2 + 1;
                 }
-                if (Convert.ToBoolean(DataGridView1.Rows[i].Cells[13].Value) == true & Convert.ToBoolean(DataGridView1.Rows[i].Cells[14].Value) == false)
+                if (Convert.ToBoolean(DataGridView1.Rows[i].Cells[13].Value) == true && Convert.ToBoolean(DataGridView1.Rows[i].Cells[14].Value) == false)
                 {
                     m_SelectedStyle = new DataGridViewCellStyle();
                     m_SelectedStyle.BackColor = WN_WoR;
                     DataGridView1.Rows[i].DefaultCellStyle = m_SelectedStyle;
                     lb3 = lb3 + 1;
                 }
-                if (Convert.ToBoolean(DataGridView1.Rows[i].Cells[13].Value) == true & Convert.ToBoolean(DataGridView1.Rows[i].Cells[14].Value) == true)
+                if (Convert.ToBoolean(DataGridView1.Rows[i].Cells[13].Value) == true && Convert.ToBoolean(DataGridView1.Rows[i].Cells[14].Value) == true)
                 {
                     m_SelectedStyle = new DataGridViewCellStyle();
                     m_SelectedStyle.BackColor = WN_WR;
@@ -106,9 +107,11 @@ namespace TeleRadReport
             dtpDateFrom.Value = DateTime.Now.Date;
             dtpDateTo.Value = DateTime.Now.Date;
             TeleRadReport.modMain.Retreived = false;
-            DataGridView1.Refresh();
             this.Cursor = Cursors.WaitCursor;
             this.PatientStudyViewTableAdapter.Fill(this.PatientStudyView.PatientStudyView);
+            //this.DataGridView1.DataSource = this.PatientStudyViewTableAdapter;
+            DataGridView1.Refresh();
+
             this.Cursor = Cursors.Default;
             WoN_WoR = Color.White;
             WN_WoR = Color.LightPink;
@@ -804,8 +807,10 @@ namespace TeleRadReport
 
         private void DataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+
             if (DataGridView1.Columns[e.ColumnIndex].Name.Equals("ImgNotes"))
             {
+                if (DataGridView1.Rows[e.RowIndex].Cells["IsNotes"].Value == DBNull.Value) return;
                 if (Convert.ToBoolean(DataGridView1.Rows[e.RowIndex].Cells["IsNotes"].Value) == true)
                 {
                     e.Value = TeleRadReport.Properties.Resources.circle_green;
@@ -813,6 +818,7 @@ namespace TeleRadReport
             }
             if (DataGridView1.Columns[e.ColumnIndex].Name.Equals("ImgReports"))
             {
+                if (DataGridView1.Rows[e.RowIndex].Cells["IsReports"].Value == DBNull.Value) return;
                 if (Convert.ToBoolean(DataGridView1.Rows[e.RowIndex].Cells["IsReports"].Value) == true)
                 {
                     e.Value = TeleRadReport.Properties.Resources.circle_green;
@@ -892,7 +898,7 @@ namespace TeleRadReport
                 OpenStudiesRequest request = new OpenStudiesRequest();
                 request.ActivateIfAlreadyOpen = true;
                 List<OpenStudyInfo> studiesToOpen = new List<OpenStudyInfo>();
-                OpenStudyInfo studyInfo = new OpenStudyInfo(modMain.StudyID); 
+                OpenStudyInfo studyInfo = new OpenStudyInfo(modMain.StudyID);
                 studiesToOpen.Add(studyInfo);
                 request.StudiesToOpen = studiesToOpen;
                 client.OpenStudies(request);
